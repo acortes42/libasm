@@ -2,8 +2,6 @@
 global _ft_strcpy
 
 _ft_strcpy:
-	push rdx ; cpy char
-	push rcx ; contador de bucle
 	xor rdx, rdx
 	xor rcx, rcx
 	cmp rsi, byte 0x0
@@ -17,15 +15,8 @@ _ft_strcpy:
 		jmp _start_loop 
 	_end_loop:
 	mov rax, rdi ; return dst
-	pop rdx
-	pop rcx
 	ret
 
 _is_null:	;si no hubiera arg valido, hacemos una salida sin operaciones
 	mov rax, rsi
-	pop rdx
-	pop rcx
 	ret
-
-
-;personalizar esta, ya aprendidas las bases

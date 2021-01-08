@@ -14,12 +14,12 @@ _ft_strdup:
 	mov  rdi, rax     ; tamaño a hacer malloc a rdi
 	call _malloc
 	cmp  rax, 0		;	Si ha fallado el malloc
-	je   FT_STRDUP_ERROR
+	je   _error
 
-	pop  rsi          ; esto tiene que ir fuera (str original) pero hacer pruebas de que pasa si no saliera.
+	pop  rsi
 	mov  rdi, rax     ; y ese malloc tiene que salir por aqui para hacer la copia y retorno
 	call _ft_strcpy
 	ret
-FT_STRDUP_ERROR:	
+_error:	
 	pop  rdi
 	ret
